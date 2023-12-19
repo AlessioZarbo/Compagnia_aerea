@@ -53,7 +53,7 @@ public class Main {
 				}
 				//Metodo che mi aggiunge il cliente
 				
-				System.out.println(v1.prenota(nome.getNome()));   //manda la variabile nome nel parametro del metodo
+				System.out.println(v1.prenota(nome));   //manda la variabile nome nel parametro del metodo
 
 				}
 			else {

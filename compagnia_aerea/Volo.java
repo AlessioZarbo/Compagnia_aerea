@@ -112,9 +112,9 @@ public class Volo {
 
 	public void prova() {
 
-		System.out.println(posti[0].getNome());
-		System.out.println(posti[1].getNome());
-		System.out.println(posti[2].getNome());
+		System.out.println(posti[0]);
+		System.out.println(posti[1]);
+		System.out.println(posti[2]);
 	}
 	
 }
