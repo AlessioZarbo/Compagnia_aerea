@@ -17,7 +17,7 @@ public class Main {
 		
 		while(true) {
 			
-			System.out.println("Posti massimi: " + v1.getMaxP() + "\nPosti rimanenti: " + v1.getRimanenti());
+			System.out.println("Posti massimi: " + v1.getMaxP() + "\nPosti rimanenti: " + v1.getRimanenti() + "\n");
 			
 			System.out.println("0: Uscita, 1: Prenotare, 2: Disdire > ");
 			risp = tastiera.nextInt();
@@ -60,17 +60,22 @@ public class Main {
 				v1.ListaPosti();    //stampa a schermo i posti del volo
 				v1.ListaAttesa();   //stampa a schermo la lista dell'attesa
 
+				
 
-                System.out.println("Inserire il cliente da togliere: ");
-				nome = new Cliente(tastiera.next());
-                
-                
+				System.out.println("Vuole disdire? (1 = Si; 0 = No;)");
+				risp = tastiera.nextInt();
+				
+				if (risp == 1) {
 
-
-				
-				
-				
-				
+					System.out.println("Inserire il cliente da togliere: ");
+					nome = new Cliente(tastiera.next());
+					
+					System.out.println(v1.togliCliente(nome));
+							
+				}
+                                          
+		
+							
 				
 			}
 			

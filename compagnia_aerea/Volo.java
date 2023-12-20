@@ -34,7 +34,7 @@ public class Volo {
 		if (occupati >= maxP) {
 			sentinella = -1;
 			attesa.add(nome);
-			return "Spiacenti, il volo è al completo, il cliente è aggiunto alla lista di attesa";
+			return "Spiacenti, il volo è al completo, il cliente è aggiunto alla lista di attesa \n";
 		}
 		else {
 			for (int i = 0; i < maxP; i++) {
@@ -48,10 +48,12 @@ public class Volo {
 			posti[sentinella] = new Cliente(nome);
 			occupati ++;
 			rimanenti = maxP - occupati;
-			return "Cliente aggiunto correttamente";
+			return "Cliente aggiunto correttamente \n";
 		}
 
 	}
+
+	// Stampa l'array posti
 	
 	public void ListaPosti() {
 		
@@ -65,6 +67,7 @@ public class Volo {
 		System.out.println("\n");
 	}
 
+	// Stampa l'arraylist attesa
 
 	public void ListaAttesa() {
 		System.out.println("Lista attesa: ");
@@ -80,30 +83,42 @@ public class Volo {
 	}
 	
     public String togliCliente(Cliente nome) {
+		
+		int ret = 0;
+        for(int i = 0; i < maxP; i ++) {	//Controllo array posti
+			
+			System.out.println(nome + " " + posti[i]);
 
-        for(int i = 0; i < maxP; i ++) {
-            if (nome == posti[i]) {
-                if (attesa.size() > 0) {
+            if (posti[i] == nome) {
+                if (attesa.size() > 0) {	// Controllo se ci sono elementi in attesa
                     posti[i] = attesa.getFirst();
                     attesa.removeFirst();
+
                 }
-                else {
+                else {	// Se non ci sono tolgo direttamente il cliente
                     posti[i] = null;
                 }
+                ret = 1;
                 
-                
-                return "Cliente rimosso con successo";
             }
         }
 
-        for (Cliente x : attesa) {
-            if (nome == x) {
+        for (Cliente x : attesa) {	// Controllo arraylist attesa
+            if (x == nome) {
                 attesa.remove(x);
-                return "Cliente rimosso con successo";
+				ret = 1;
+                
             }
             
         }
-        return "Errore, cliente non trovato";
+
+		if (ret == 1) {
+			return "Cliente rimosso con successo";
+		}
+		else {
+			return "Cliente non trovato";
+		}
+        
     }
 
 	// public void prova() {
