@@ -40,14 +40,12 @@ public class Volo {
 			for (int i = 0; i < maxP; i++) {
 				
 				if (posti[i] == null) {
-					System.out.println("è libera la posizione " + sentinella);
 					sentinella = i;
 					break;
 				}
 			}
 			
 			posti[sentinella] = new Cliente(nome);
-			System.out.println(posti[sentinella].getNome() + " " + sentinella);
 			occupati ++;
 			rimanenti = maxP - occupati;
 			return "Cliente aggiunto correttamente";
@@ -60,7 +58,7 @@ public class Volo {
 		System.out.println("Lista posti: ");
 		
 		for (int i = 0; i < maxP; i ++) {
-			System.out.print("Cliente " + i + ": " + posti[i].getNome() + ", ");
+			System.out.print("Cliente " + i + ": " + posti[i] + ", ");
 			
 		}
 		
@@ -108,11 +106,11 @@ public class Volo {
         return "Errore, cliente non trovato";
     }
 
-	public void prova() {
+	// public void prova() {
 
-		System.out.println(posti[0]);
-		System.out.println(posti[1]);
-		System.out.println(posti[2]);
-	}
+	// 	System.out.println(posti[0]);
+	// 	System.out.println(posti[1]);
+	// 	System.out.println(posti[2]);
+	// }
 	
 }

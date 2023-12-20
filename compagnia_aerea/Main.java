@@ -57,14 +57,12 @@ public class Main {
 
 				}
 			else {
-				//v1.ListaPosti();    //stampa a schermo i posti del volo
-				//v1.ListaAttesa();   //stampa a schermo la lista dell'attesa
-				v1.prova();
+				v1.ListaPosti();    //stampa a schermo i posti del volo
+				v1.ListaAttesa();   //stampa a schermo la lista dell'attesa
 
 
                 System.out.println("Inserire il cliente da togliere: ");
-                //nome.setNome(tastiera.nextLine());
-				nome.setNome(tastiera.next());
+				nome = new Cliente(tastiera.next());
                 
                 
 
