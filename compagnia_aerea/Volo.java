@@ -33,22 +33,20 @@ public class Volo {
 	public String prenota(Cliente nome) {
 		if (occupati >= maxP) {
 			sentinella = -1;
-			//attesa.add(nome);
+			attesa.add(nome);
 			return "Spiacenti, il volo è al completo, il cliente è aggiunto alla lista di attesa";
 		}
 		else {
-			for (int i = 0; i < maxP; i ++) {
+			for (int i = 0; i < maxP; i++) {
 				
 				if (posti[i] == null) {
 					System.out.println("è libera la posizione " + sentinella);
 					sentinella = i;
 					break;
 				}
-
-
 			}
 			
-			posti[sentinella] = nome;
+			posti[sentinella] = new Cliente(nome);
 			System.out.println(posti[sentinella].getNome() + " " + sentinella);
 			occupati ++;
 			rimanenti = maxP - occupati;

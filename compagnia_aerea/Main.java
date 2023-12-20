@@ -42,8 +42,8 @@ public class Main {
 				
 				System.out.println("Inserire il mome del cliente >");
 				//nome.setNome(tastiera.next());  //inserimento del nome
-				nome.setNome(tastiera.next());
-				
+				//nome.setNome(tastiera.next());
+				nome = new Cliente(tastiera.next());
 				//Controllo se il nome è valido
 				
 				while(nome.getNome().length() == 0) {
