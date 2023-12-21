@@ -86,19 +86,21 @@ public class Volo {
 		
 		int ret = 0;
         for(int i = 0; i < maxP; i ++) {	//Controllo array posti
-			
-			System.out.println(nome + " " + posti[i]);
 
-            if (posti[i] == nome) {
+            if (posti[i].getNome().equals(nome.getNome())) {
                 if (attesa.size() > 0) {	// Controllo se ci sono elementi in attesa
                     posti[i] = attesa.getFirst();
                     attesa.removeFirst();
+					
 
                 }
                 else {	// Se non ci sono tolgo direttamente il cliente
                     posti[i] = null;
+					rimanenti++;
+					occupati--;
                 }
                 ret = 1;
+				break;
                 
             }
         }
@@ -107,6 +109,7 @@ public class Volo {
             if (x == nome) {
                 attesa.remove(x);
 				ret = 1;
+				break;
                 
             }
             
