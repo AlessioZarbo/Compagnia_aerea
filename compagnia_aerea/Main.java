@@ -13,6 +13,8 @@ public class Main {
 		int risp;   //eventuali risposte
 		Cliente nome = new Cliente("nome"); //variabile nome da mandare nei metodi
 		//String nome;
+
+
 		//Inizio menu
 		
 		while(true) {
@@ -33,6 +35,8 @@ public class Main {
 			//Controllo uscita
 			
 			if (risp == 0) {
+				v1.ListaPosti();
+				v1.ListaAttesa();
                 System.out.println("Arrivederci");
 				break;
 			}
@@ -70,7 +74,7 @@ public class Main {
 					System.out.println("Inserire il cliente da togliere: ");
 					nome = new Cliente(tastiera.next());
 					
-					System.out.println(v1.togliCliente(nome));
+					System.out.println(v1.togliCliente(nome));	// Manda il nome nella funzione togliCliente
 							
 				}
                                           

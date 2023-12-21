@@ -84,7 +84,7 @@ public class Volo {
 	
     public String togliCliente(Cliente nome) {
 		
-		int ret = 0;
+		int ret = 0;	// Variabile return (1- trova il cliente, 0- non lo trova)
         for(int i = 0; i < maxP; i ++) {	//Controllo array posti
 
             if (posti[i].getNome().equals(nome.getNome())) {
@@ -124,7 +124,7 @@ public class Volo {
         
     }
 
-	// public void prova() {
+	// public void prova() {	// Prova per mostrare l'array posti
 
 	// 	System.out.println(posti[0]);
 	// 	System.out.println(posti[1]);
